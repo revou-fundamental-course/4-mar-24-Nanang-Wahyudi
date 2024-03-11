@@ -32,12 +32,14 @@ button.addEventListener("click", () => {
         const bmi = (weight / ((height*height)/10000)).toFixed(2);
 
         // Menentukan status berat badan berdasarkan nilai BMI dan menampilkannya
-        if (bmi < 18.6) {
+        if (bmi < 18.5) {
             result.innerHTML = "Underweight : " + bmi;    
-        }else if (bmi >= 18.6 && bmi <= 24.9){
+        }else if (bmi >= 18.5 && bmi <= 24.9){
             result.innerHTML = "Normal : " + bmi;
-        }else{
+        }else if (bmi >= 25.0 && bmi <= 29.9){
             result.innerHTML = "Overweight : " + bmi;
+        } else {
+            result.innerHTML = "Obesity : " + bmi;
         }
     }else{
         // Jika input tidak valid, kosongkan hasil
